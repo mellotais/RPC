@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package biblioteca;
+
+service ServicoBiblioteca {
+  rpc AdicionarLivro (Livro) returns (Resposta);
+  rpc PegarLivro (Vazio) returns (Livro);
+}
+
+message Livro {
+  string titulo = 1;
+  string autor = 2;
+}
+
+message Resposta {
+  string mensagem = 1;
+}
+
+message Vazio {}
